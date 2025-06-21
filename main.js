@@ -1,0 +1,23 @@
+function knightMoves(source, destination) {
+  const possibleMoves = [
+    [1, 2],
+    [2, 1],
+    [-1, 2],
+    [-2, 1],
+    [1, -2],
+    [2, -1],
+    [-1, -2],
+    [-2, -1],
+  ];
+
+  const queue = [];
+  const visited = new Set();
+
+  function isWithinTheBoard(x, y) {
+    return x >= 0 && x <= 7 && y >= 0 && y <= 7;
+  }
+
+  function convertPositionToString([x, y]) {
+    return `${x},${y}`;
+  }
+}
