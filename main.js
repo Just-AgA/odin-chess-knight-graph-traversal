@@ -20,4 +20,9 @@ function knightMoves(source, destination) {
   function convertPositionToString([x, y]) {
     return `${x},${y}`;
   }
+
+  queue.push([source, [source]]);
+  visited.add(convertPositionToString(source));
+
+  let moves = 0;
 }
