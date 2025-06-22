@@ -25,4 +25,18 @@ function knightMoves(source, destination) {
   visited.add(convertPositionToString(source));
 
   let moves = 0;
+
+  while (queue.length > 0) {
+    const currentLevelSize = queue.length;
+
+    // Process all nodes at the current move count (BFS layer)
+    for (let i = 0; i < currentLevelSize; i++) {
+      const [pos, path] = queue.shift();
+      const [x, y] = pos;
+    }
+
+    moves++;
+  }
+
+  return [];
 }
