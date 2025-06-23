@@ -33,6 +33,11 @@ function knightMoves(source, destination) {
     for (let i = 0; i < currentLevelSize; i++) {
       const [pos, path] = queue.shift();
       const [x, y] = pos;
+
+      if (x === destination[0] && y === destination[1]) {
+        return `You made it in ${moves} moves. Here is your path:
+        \n${JSON.stringify(path)}`;
+      }
     }
 
     moves++;
