@@ -38,6 +38,18 @@ function knightMoves(source, destination) {
         return `You made it in ${moves} moves. Here is your path:
         \n${JSON.stringify(path)}`;
       }
+
+      for (const move of possibleMoves) {
+        const nextX = x + move[0];
+        const nextY = y + move[1];
+        const nextPos = [nextX, nextY];
+        const nextPosStr = convertPositionToString(nextPos);
+
+        if (isWithinTheBoard(nextX, nextY) && !visited.has(nextPosStr)) {
+          visited.add(nextPosStr);
+          queue.push([nextPos, [...path, nextPos]]);
+        }
+      }
     }
 
     moves++;
